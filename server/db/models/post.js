@@ -3,7 +3,7 @@ const db = require('../db')
 
 const Post = db.define('post', {
   content: {
-    type: Sequelize.TEXT,
+    type: Sequelize.TEXT
   }
 })
 
