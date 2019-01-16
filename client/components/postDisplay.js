@@ -14,6 +14,7 @@ export class PostDisplay extends React.Component {
         {this.props.posts.map(post => (
           <div key={post.id} className="post">
             {post.content}
+            <div className="tags">{post.tags.map(tag => `#${tag} `)}</div>
           </div>
         ))}
       </div>
