@@ -5,7 +5,7 @@ import history from '../history'
 const GET_POSTS = 'GET_POSTS'
 
 /** INITIAL STATE **/
-const defaultPosts = [{}]
+const defaultPosts = [{content: '', tags: []}]
 
 /** ACTION CREATORS **/
 const getPosts = posts => ({type: GET_POSTS, posts})

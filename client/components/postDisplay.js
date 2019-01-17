@@ -2,17 +2,21 @@ import React from 'react'
 import {getAllPosts} from '../store'
 import {connect} from 'react-redux'
 
-class PostDisplay extends React.Component {
+export class PostDisplay extends React.Component {
   componentDidMount() {
     this.props.getAllPosts()
   }
 
   render() {
-    console.log('Props:', this.props)
     return (
       <div>
         These are my posts:{' '}
-        {this.props.posts.map(post => <div key={post.id}>{post.content}</div>)}
+        {this.props.posts.map(post => (
+          <div key={post.id} className="post">
+            {post.content}
+            <div className="tags">{post.tags.map(tag => `#${tag} `)}</div>
+          </div>
+        ))}
       </div>
     )
   }
